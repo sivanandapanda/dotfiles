@@ -76,7 +76,7 @@ ZSH_THEME=powerlevel10k/powerlevel10k
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting kubectl)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting kubectl docker oc mvn)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,6 +108,7 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -118,5 +119,5 @@ eval "$(direnv hook zsh)"
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 
 export JAVA_HOME=/usr/lib/jvm/java-14-openjdk-amd64
-PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
+PATH=$PATH:$HOME/bin:~/softwares/:$JAVA_HOME/bin
 export PATH
