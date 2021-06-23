@@ -38,7 +38,7 @@ sudo snap install --classic code
 
 #maven
 
-sudo apt-get install maven -y
+#sudo apt-get install maven -y
 
 #chrome
 

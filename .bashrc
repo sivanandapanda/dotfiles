@@ -124,6 +124,6 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(direnv hook bash)"
 
-export JAVA_HOME=/usr/lib/jvm/java-14-openjdk-amd64
-PATH=$PATH:$HOME/bin:~/softwares/:$JAVA_HOME/bin
+export JAVA_HOME=/usr/lib/jvm/java-16-openjdk-amd64
+PATH=$PATH:$HOME/bin:~/softwares/:$JAVA_HOME/bin:~/bin/apache-maven-3.8.1/bin
 export PATH
