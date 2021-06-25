@@ -48,5 +48,18 @@ sudo apt install ./google-chrome-stable_current_amd64.deb
 sudo apt install direnv
 
 #misc
-sudo apt install jq 
-sudo apt install httpie
+sudo apt-get install jq 
+sudo apt-get install httpie
+sudo apt-get install terminator
+
+#zsh
+sudo apt-get install fonts-powerline
+sudo apt install zsh
+zsh --version
+chsh -s $(which zsh)
+wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+chmod 744 install.sh
+sh install.sh
+
+
+
