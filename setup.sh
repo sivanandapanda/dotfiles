@@ -10,6 +10,11 @@ sudo snap install intellij-idea-community --classic
 sudo apt install openjdk-16-jdk -y
 
 #docker
+
+#check below if works
+#sudo apt-get install docker.io
+#docker --version
+
 sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
