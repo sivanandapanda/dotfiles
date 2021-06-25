@@ -126,4 +126,16 @@ eval "$(direnv hook bash)"
 
 export JAVA_HOME=/usr/lib/jvm/java-16-openjdk-amd64
 PATH=$PATH:$HOME/bin:~/softwares/:$JAVA_HOME/bin:~/bin/apache-maven-3.8.1/bin
-export PATH
+export PATHi
+
+show_virtual_env() {
+if [ -n "$VIRTUAL_ENV" ]; then
+  echo "($(basename $VIRTUAL_ENV))"
+fi
+} 
+
+PS1='$(show_virtual_env)'$PS1
+
+# direnv
+eval "$(direnv hook bash)"
+
