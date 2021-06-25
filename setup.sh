@@ -46,8 +46,12 @@ sudo snap install --classic code
 #sudo apt-get install maven -y
 
 #chrome
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt install ./google-chrome-stable_current_amd64.deb
+#wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+#sudo apt install ./google-chrome-stable_current_amd64.deb
+
+#mozilla firefox
+sudo apt install firefox
+firefox --version
 
 #direnv
 sudo apt install direnv
