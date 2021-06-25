@@ -21,11 +21,11 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o 
 
 echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-sudo apt-get update
+sudo apt-get update -y
 
 sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 
-sudo groupadd docker
+#sudo groupadd docker
 
 sudo usermod -aG docker $USER
 
@@ -50,25 +50,23 @@ sudo snap install --classic code
 #sudo apt install ./google-chrome-stable_current_amd64.deb
 
 #mozilla firefox
-sudo apt install firefox
+sudo apt install firefox -y
 firefox --version
 
 #direnv
-sudo apt install direnv
+sudo apt install direnv -y
 
 #misc
-sudo apt-get install jq 
-sudo apt-get install httpie
-sudo apt-get install terminator
+sudo apt-get install jq -y
+sudo apt-get install httpie -y
+sudo apt-get install terminator -y
 
 #zsh
-sudo apt-get install fonts-powerline
-sudo apt install zsh
+sudo apt-get install fonts-powerline -y
+sudo apt install zsh -y
 zsh --version
 chsh -s $(which zsh)
 wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 chmod 744 install.sh
 sh install.sh
-
-
 
