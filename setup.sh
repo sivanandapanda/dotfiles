@@ -70,3 +70,5 @@ wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
 chmod 744 install.sh
 sh install.sh
 
+#time
+sudo timedatectl set-timezone Asia/Singapore
