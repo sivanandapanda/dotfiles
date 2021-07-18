@@ -73,3 +73,11 @@ sh install.sh
 
 #time
 sudo timedatectl set-timezone Asia/Singapore
+
+#maven
+mkdir ~/bin && cd ~/bin
+wget https://www-eu.apache.org/dist/maven/maven-3/3.8.1/binaries/apache-maven-3.8.1-bin.tar.gz
+tar -xzf apache-maven-3.8.1-bin.tar.gz
+echo "export M2_HOME=~/bin/apache-maven-3.8.1" >> ~/.bashrc
+echo "export PATH=$PATH:$M2_HOME/bin" >> ~/.bashrc
+
