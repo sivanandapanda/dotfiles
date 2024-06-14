@@ -6,7 +6,7 @@
 " text scroll if you mouse-click near the start or end of the window.
 set scrolloff=10
 set ideajoin
-set relativenumber number
+set number relativenumber
 set surround
 set multiple-cursors
 " ensures that ideaVim shares its clipboard with the system clipboard
