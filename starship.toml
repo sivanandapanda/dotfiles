@@ -34,11 +34,11 @@ color_bg1 = '#3c3836'
 color_bg3 = '#665c54'
 color_blue = '#458588'
 color_aqua = '#689d6a'
-color_green = '#31464c'
-color_orange = '#4974a5'
+color_green = '#aieebd'
+color_orange = '#554994'
 color_purple = '#b16286'
 color_red = '#f2cdcd'
-color_yellow = '#1a3678'
+color_yellow = '#7469b6'
 
 [os]
 disabled = false
