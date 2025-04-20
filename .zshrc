@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/siva/.oh-my-zsh"
+export ZSH="/home/maxx/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -121,3 +121,5 @@ eval "$(direnv hook zsh)"
 export JAVA_HOME=/usr/lib/jvm/java-16-openjdk-amd64
 PATH=$PATH:$HOME/bin:~/softwares/:$JAVA_HOME/bin:~/bin/apache-maven-3.8.1/bin
 export PATH
+
+eval "$(starship init zsh)"
