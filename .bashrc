@@ -125,7 +125,7 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(direnv hook bash)"
 
 export JAVA_HOME=/usr/lib/jvm/java-16-openjdk-amd64
-PATH=$PATH:$HOME/bin:~/softwares/:$JAVA_HOME/bin:~/bin/apache-maven-3.8.1/bin
+PATH=$PATH:$HOME/bin:~/.local/bin:~/softwares/:$JAVA_HOME/bin:~/bin/apache-maven-3.8.1/bin
 export PATHi
 
 show_virtual_env() {
@@ -139,3 +139,4 @@ PS1='$(show_virtual_env)'$PS1
 # direnv
 eval "$(direnv hook bash)"
 
+eval "$(starship init bash)"
