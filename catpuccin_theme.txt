@@ -1,0 +1,46 @@
+sudo apt install nautilus nautilus-admin nautilus-extension-gnome-terminal
+
+https://www.pling.com/p/2033080/
+
+unzip ~/Downloads/catpuccin/themes.zip -d ~/
+mv ~/themes ~/.themes
+
+
+
+https://ulauncher.io/#Download
+
+unzip ~/Downloads/catpuccin/icons.zip ~/.local/share
+unzip ~/Downloads/catpuccin/icons.zip -d ~/.local/share
+unzip ~/Downloads/catpuccin/start-menu-icon.zip -d ~/.local/share/icons
+unzip ~/Downloads/catpuccin/cursors.zip -d ~/
+mv -v ~/cursors ~/.icons
+cd ~/.icons
+ll
+cd cursors
+ll
+unzip ~/Downloads/catpuccin/fonts.zip -d ~/.local/share
+unzip ~/Downloads/catpuccin/cinnamon-applet-config.zip ~/Dowloads
+unzip ~/Downloads/catpuccin/cinnamon-applet-config.zip ~/Downloads
+unzip ~/Downloads/catpuccin/cinnamon-applet-config.zip -d ~/Downloads
+rsync -av ~/Downloads/cinnamon-applet-config/.cinnamon ~/
+rsync -av ~/Downloads/cinnamon-applet-config/.local ~/
+rm -rf ~/Downloads/cinnamon-applet-config
+unzip ~/Downloads/catpuccin/cinnamon-config.zip -d ~/Downloads
+dconf load /org/cinnamon/ < ~/Downloads/cinnamon-config/cinnamon-catppcn.conf
+cd ~/Downloads
+sudo apt install ./ulauncher_5.15.7_all.deb
+unzip ~/Downloads/catpuccin/ulauncher-theme.zip -d ~/Downloads
+rsync -av ~/Downloads/ulauncher-theme/.config ~/
+rm -rf ~/Downloads/ulauncher-theme
+sudo apt install conky-all jq curl moc
+sudo vi /etc/environment
+unzip ~/Downloads/catpuccin/conky-config.zip -d ~/Downloads
+rsync -av ~/Downloads/conky-config/conky ~/.config
+rsync -av ~/Downloads/conky-config/autostart ~/.config
+rm -rf ~/Downloads/conky-config
+sudo apt-get install libgl1-mesa-dev libpulse0 libpulse-dev libxext6 libxext-dev libxrender-dev libxcomposite-dev liblia5.3-dev liblua5.3 lua-lgi lua-filesystem libobs0 libobs-dev meson build-essential gcc
+sudo apt-get install libgl1-mesa-dev libpulse0 libpulse-dev libxext6 libxext-dev libxrender-dev libxcomposite-dev liblua5.3-dev liblua5.3 lua-lgi lua-filesystem libobs0 libobs-dev meson build-essential gcc
+sudo ldconfig
+git clone https://github.com/wild-turtles-publicly-release/glava/glava.git
+curl -L https://raw.githubusercontent.com/catppuccin/gnome-terminal/v1.0.0/install.py | python3 -
+

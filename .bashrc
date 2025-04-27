@@ -140,3 +140,6 @@ PS1='$(show_virtual_env)'$PS1
 eval "$(direnv hook bash)"
 
 eval "$(starship init bash)"
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
