@@ -6,7 +6,7 @@
 #fi
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+PATH=$PATH:$HOME/bin:~/.local/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -114,10 +114,12 @@ source $ZSH/oh-my-zsh.sh
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-source <(fzf --zsh)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # starship
 eval "$(starship init zsh)"
 
 alias vi="nvim"
 alias vim="nvim"
+alias bat="batcat"
+
