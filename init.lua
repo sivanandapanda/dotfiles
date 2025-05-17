@@ -923,10 +923,7 @@ require("lazy").setup({
 				flavour = "macchiato",
 			})
 			vim.cmd.colorscheme("catppuccin")
-			vim.cmd([[
-        highlight Normal guibg=none
-        highlight NonText guibg=none
-      ]])
+			vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 		end,
 	},
 
