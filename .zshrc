@@ -1,4 +1,4 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 #if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
@@ -122,7 +122,7 @@ eval "$(starship init zsh)"
 alias vi="nvim"
 alias vim="nvim"
 alias bat="batcat"
-alias generate_pwd="tr -dc 'A-Za-z0-9' </dev/urandom | head -c 10; echo"
+alias generate_pwd="tr -dc 'A-Za-z0-9' </dev/urandom | head -c 12; echo"
 
 
 export NVM_DIR="$HOME/.nvm"
@@ -136,3 +136,4 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
