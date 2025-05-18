@@ -24,3 +24,8 @@
 - "Prefix + ," -> rename window
 - "Prefix + &" -> kill current window
 
+# window resize
+To resize down, use: CtrlB:resize-p -D 2
+To resize up, use: CtrlB:resize-p -U 2
+To resize left, use: CtrlB:resize-p -L 2
+To resize right, use: CtrlB:resize-p -R 2
