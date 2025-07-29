@@ -1,0 +1,20 @@
+## Problem 1
+VMSetError: VirtualBox can't enable the AMD-V extension. Please disable the KVM kernel extension,
+
+Solution:
+
+sudo rmmod kvm_amd
+
+## Problem 2
+Windows cannot read the <ProductKey> setting from the unattend answer file'.
+
+Solution:
+
+1. Power of the VM machine
+2. Go to the settings of your VM - System - Boot Order - Uncheck Floppy
+3. Press OK
+4. Go to the folder where your VM is stored (default is Home - VirtualBox VMs)
+5. Delete all 3 files that start with "Unattended"
+6. Power on the VM machine
+7. Click OK on the warning
+8. Press any key to continue
