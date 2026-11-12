@@ -119,8 +119,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # starship
 eval "$(starship init zsh)"
 
-alias vi="nvim"
-alias vim="nvim"
+alias vi=vim
 alias bat="batcat"
 alias generate_pwd="tr -dc 'A-Za-z0-9' </dev/urandom | head -c 12; echo"
 

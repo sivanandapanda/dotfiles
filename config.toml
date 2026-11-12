@@ -1,0 +1,61 @@
+onboarding = false
+
+[theme]
+name = "catppuccin"
+
+auto_switch = false
+[keys]
+
+# === Prefix ===
+prefix = "`"
+
+# --- Pane focus (defaults - vim keys, no change) ---
+focus_pane_left  = "prefix+h"      # default
+focus_pane_down  = "prefix+j"      # default
+focus_pane_up    = "prefix+k"      # default
+focus_pane_right = "prefix+l"      # default
+
+# --- Pane splitting ---
+split_vertical   = "prefix+s"
+split_horizontal = "prefix+v"
+
+# --- Pane zoom ---
+zoom = "prefix+z"                 # default
+
+# --- Pane close ---
+close_pane = "prefix+x"           # default
+
+# --- Tab management ---
+new_tab      = "prefix+c"          # default
+rename_tab   = "prefix+shift+t"    # default
+previous_tab = "prefix+p"          # default
+next_tab     = "prefix+n"          # default
+switch_tab   = "prefix+1..9"       # default
+close_tab    = "prefix+shift+x"    # default
+
+# --- Workspace management ---
+workspace_picker = "prefix+w"          # default
+new_workspace    = "prefix+shift+n"    # default
+rename_workspace = "prefix+shift+w"    # default
+close_workspace  = "prefix+shift+d"    # default
+
+# --- Navigation & UI ---
+cycle_pane_next     = "prefix+tab"          # default
+cycle_pane_previous = "prefix+shift+tab"    # default
+resize_mode         = "prefix+r"            # default
+edit_scrollback     = "prefix+e"            # default
+toggle_sidebar      = "prefix+b"            # default
+
+# --- Detach / Help / Config ---
+detach        = "prefix+q"          # default
+help          = "prefix+?"          # default
+reload_config = "prefix+shift+r"    # default
+
+[ui]
+mouse_capture = true
+
+show_agent_labels_on_pane_borders = true
+
+[advanced]
+scrollback_limit_bytes = 50000000
+
