@@ -742,7 +742,10 @@ require('lazy').setup({
         'stylua', -- Used to format Lua code
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
-      require('lspconfig').ts_ls.setup {
+
+      -- Neovim 0.11+ uses vim.lsp.config/vim.lsp.enable directly instead of
+      -- the deprecated `require('lspconfig')` framework.
+      vim.lsp.config('ts_ls', {
         init_options = {
           hostInfo = 'neovim',
           preferences = {
@@ -752,21 +755,22 @@ require('lazy').setup({
             quotePreference = 'single',
           },
         },
-      }
+      })
+      vim.lsp.enable 'ts_ls'
+
+      -- Configure any servers declared in the `servers` table above.
+      for server_name, server in pairs(servers) do
+        server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+        vim.lsp.config(server_name, server)
+      end
 
       require('mason-lspconfig').setup {
         ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
         automatic_installation = false,
-        handlers = {
-          function(server_name)
-            local server = servers[server_name] or {}
-            -- This handles overriding only values explicitly passed
-            -- by the server configuration above. Useful when disabling
-            -- certain features of an LSP (for example, turning off formatting for ts_ls)
-            server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
-          end,
-        },
+        -- stylua is installed as a formatter (for conform.nvim), not as a language
+        -- server. Its lspconfig entry expects a `stylua --lsp` mode that the Mason
+        -- build does not support, so keep mason-lspconfig from starting it.
+        automatic_enable = { exclude = { 'stylua' } },
       }
     end,
   },
@@ -927,7 +931,7 @@ require('lazy').setup({
     end,
   },
 
-  { 'mfussenegger/nvim-jdtls', dependencies = { 'hrsh7th/cmp-nvim-lsp' } },
+  { 'mfussenegger/nvim-jdtls' },
 
   { 'christoomey/vim-tmux-navigator' },
 
@@ -948,16 +952,6 @@ require('lazy').setup({
     dependencies = {
       'MunifTanjim/nui.nvim',
       'rcarriga/nvim-notify',
-    },
-  },
-
-  {
-    'hrsh7th/nvim-cmp',
-    version = false, -- Ignore tags because nvim-cmp has a very old tag
-    dependencies = {
-      'L3MON4D3/LuaSnip', -- Snippet engine
-      'saadparwaiz1/cmp_luasnip', -- Snippet engine adapter
-      'hrsh7th/cmp-nvim-lsp', -- Source for LSP completion
     },
   },
 
@@ -1663,25 +1657,6 @@ require('lazy').setup({
     },
   },
 })
-
-require('cmp').setup {
-  snippet = {
-    expand = function(args)
-      require('luasnip').lsp_expand(args.body)
-    end,
-  },
-  mapping = {
-    ['<C-c>'] = require('cmp').mapping.abort(),
-    ['<CR>'] = require('cmp').mapping.confirm(),
-    ['<C-n>'] = require('cmp').mapping.select_next_item(),
-    ['<C-p>'] = require('cmp').mapping.select_prev_item(),
-  },
-  sources = {
-    {
-      name = 'nvim_lsp',
-    },
-  },
-}
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
