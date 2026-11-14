@@ -3,6 +3,16 @@ local workspace_path = home .. "/.local/share/nvim/jdtls-workspace/"
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 local workspace_dir = workspace_path .. project_name
 
+-- Pick the jdtls launcher config that matches the current OS/architecture.
+local uname = (vim.uv or vim.loop).os_uname()
+local is_arm = uname.machine == "arm64" or uname.machine == "aarch64"
+local jdtls_config
+if uname.sysname == "Darwin" then
+	jdtls_config = is_arm and "config_mac_arm" or "config_mac"
+else
+	jdtls_config = is_arm and "config_linux_arm" or "config_linux"
+end
+
 local status, jdtls = pcall(require, "jdtls")
 if not status then
 	return
@@ -27,7 +37,7 @@ local config = {
 		"-jar",
 		vim.fn.glob(home .. "/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
 		"-configuration",
-		home .. "/.local/share/nvim/mason/packages/jdtls/config_linux",
+		home .. "/.local/share/nvim/mason/packages/jdtls/" .. jdtls_config,
 		"-data",
 		workspace_dir,
 	},
@@ -56,7 +66,7 @@ local config = {
 			},
 		},
 	},
-	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+	capabilities = require("blink.cmp").get_lsp_capabilities(),
 	init_options = {
 		bundles = {},
 	},
